@@ -1,0 +1,3 @@
+#Sistema de Ponto de vendas em Electron
+
+Em desenvolvimento...

@@ -1,0 +1,149 @@
+body{
+    background-color: #1B2A41;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1100px;
+    height: 600px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: .3fr 2fr .5fr .1fr;
+}
+.mid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.NameProd{
+    width: 1100px;
+    height: 60px;
+    letter-spacing: .5px;
+}
+.whiteback{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    background-color: #fff;
+}
+.esq{
+    margin: 5px;
+    background-color: #fff;
+    height: 350px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.list{
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 12px;
+}
+.cab{
+    font-weight: 600;
+}
+.informacao{
+    margin-left: 10px;
+    height: 350px;
+    width: 250px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    align-items: flex-end;
+}
+.informacao *{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5px;
+}
+.informacao b{
+    color: white;
+    font-size: 1.3rem;
+}
+.informacao input{
+    height: 52px;
+    font-size: 1.4rem;
+    text-align: end;
+}
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+.dir{
+   display: flex;
+   flex-direction: column;
+}
+.dir button{
+    font-size: 1.4rem;
+    margin: 5px 5px;
+    height: 109px;
+}
+.green{
+    color: white;
+    background-color: rgb(61, 199, 43);
+}
+.red{
+    color: white;
+    background-color: rgb(182, 34, 34);
+}
+.gray{
+    
+    color: white;
+    background-color: rgb(105, 105, 105);
+}
+.yellow{
+    color: white;
+    background-color: rgb(72, 78, 0);
+}
+.down{ 
+    height: 100px;
+    width: 1100px;
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+}
+.down *{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+}
+.down input{
+    height: 52px;
+    font-size: 1.4rem;
+    text-align: end;
+}
+.down b{
+    color: white;
+    font-size: 1.3rem;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+.menu *{
+    height: 30px;   
+    width: 100px;
+}
+.font-l{
+    font: .5rem
+}
+.msg{
+    font-size: 1.6rem !important;
+    text-align: center !important;
+}

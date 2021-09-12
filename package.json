@@ -1,0 +1,15 @@
+{
+  "name": "electron-app",
+  "version": "1.0.0",
+  "description": "Aplicação Caixa",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "https://github.com/Gabrie2121",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^14.0.0"
+  }
+}

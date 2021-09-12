@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/pdv.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <b>
+            <div class=" whiteback NameProd"> REFRIGERANTE 600ML COCA COLA</div>
+        </b>
+        <div class="mid">
+            <div class="esq">
+                <div class="Cabecalho">
+                    <div class="cab">** Cupom Fiscal **</div>
+                    --------------------------------------------------------------------------
+                    <div class="list cab">
+                        <div>CÓDIGO</div>
+                        <div>DESCRIÇÃO</div>
+                        <div>QTD</div>
+                        <div>VALOR</div>
+                    </div>
+                    --------------------------------------------------------------------------
+                    <div class="itens list">
+                        <div>303030320</div>
+                        <div>COCA COLA</div>
+                        <div>3X</div>
+                        <div>VALOR</div>
+                    </div>
+                </div>
+            </div>
+            <div class="informacao">
+                <div>
+                    <b>CÓDIGO</b>
+                    <input type="number">
+                </div>
+                <div>
+                    <b>QUANTIDADE</b>
+                    <input type="number" disabled>
+                </div>
+                <div>
+                    <b>VALOR UNITÁRIO</b>
+                    <input type="number" disabled>
+                </div>
+                <div>
+                    <b>DESCONTOS</b>
+                    <input type="number">
+                </div>
+            </div>
+            <div class="dir">
+                <button class="green">VENDER (F1)</button>
+                <button class="red">SANGRIA(F9)</button>
+                <button class="gray">SUPRIMENTO(F10)</button>
+            </div>
+        </div>
+        <div class="down">
+            <div class="valortotal">
+                <b>VALOR TOTAL</b>
+                <input type="number" disabled>
+            </div>
+            <div class="mensagem">
+                <b>MENSAGEM</b>
+                <input class="msg" type="text" value="VENDA EM ANDAMENTO" disabled>
+            </div>
+
+        </div>
+        <div class="menu">
+            <button class="gray" onclick="menu()">Voltar</button>
+            <button class="yellow">Ajuda</button>
+            <button class="red"onclick="sair()">Sair</button>
+        </div>
+    </div>
+    <script src="./assets/script/menu.js"></script>
+</body>
+</html>
