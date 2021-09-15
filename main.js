@@ -18,7 +18,7 @@ function createWindow() {
   })
   win.setMenu(null)
 
-  win.loadFile('./src/login.html')
+  win.loadFile('./src/menu.html')
 }
 
 app.whenReady().then(() => {
