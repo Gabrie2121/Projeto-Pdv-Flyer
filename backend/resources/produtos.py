@@ -16,7 +16,7 @@ class Produto(Resource):
         produto = ProdutosModel.find_produto(produto_id)
         if produto:
             return produto.json()
-        return {'message': 'Hotel not found'},404
+        return {'message': 'Produto not found'},404
 
     def post(self,produto_id):
         if ProdutosModel.find_produto(produto_id):
