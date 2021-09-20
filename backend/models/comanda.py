@@ -2,27 +2,28 @@ from datetime import timezone
 from creatsqlalchemy import banco
 from datetime import datetime
 class ComandaModel(banco.Model):
-    __tablename__ = "vendasi"
+    __tablename__ = "comandas"
+
     codComanda = banco.Column(banco.String(), primary_key=True)
     codprod = banco.Column(banco.Integer())
-    codvenda = banco.Column(banco.Integer())
     qtde = banco.Column(banco.Float(precision=3))
-    vlvenda = banco.Column(banco.Float(precision=2))
+    id_vendedor = banco.Column(banco.Integer())
+    status = banco.Column(banco.Integer(),default = 0)
 
-    def __init__(self,codComanda,codprod,codvenda,qtde,vlvenda):
+    def __init__(self,codComanda,codprod,qtde,id_vendedor,status):
         self.codComanda = codComanda
         self.codprod = codprod
-        self.codvenda = codvenda
         self.qtde = qtde
-        self.vlvenda = vlvenda
+        self.id_vendedor = id_vendedor
+        self.status = status
 
     def json(self):
         return{
             'codComanda':self.codComanda,
             'codprod':self.codprod,
-            'codvenda':self.codvenda,
             'qtde':self.qtde,
-            'vlvenda':self.vlvenda
+            'id_vendedor':self.id_vendedor,
+            'status':self.status
         }
 
     @classmethod

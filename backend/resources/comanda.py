@@ -8,9 +8,9 @@ class Comandas(Resource):
 class Comanda(Resource):
     atributos = reqparse.RequestParser()
     atributos.add_argument('codprod')
-    atributos.add_argument('codvenda')
     atributos.add_argument('qtde')
-    atributos.add_argument('vlvenda')
+    atributos.add_argument('id_vendedor')
+    atributos.add_argument('status')
 
     def get(self,codComanda):
         comanda = ComandaModel.find_comanda(codComanda)
