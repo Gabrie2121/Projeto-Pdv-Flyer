@@ -9,16 +9,16 @@ function createWindow() {
     width: 1280,
     height: 720,
     title: "GNJ Sys",
-    frame: false,
+    frame: true,
     resizable: false,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  win.setMenu(null)
+  //win.setMenu(null)
 
-  win.loadFile('./src/menu.html')
+  win.loadFile('./src/login.html')
 }
 
 app.whenReady().then(() => {
@@ -40,7 +40,7 @@ app.on('window-all-closed', function () {
 })
 
 let backend;
-backend = path.join(process.cwd(), 'backend/dist/app/app.exe')
+backend = path.join(process.cwd(), 'backend/app/app.exe')
 
 execfile(
   backend,

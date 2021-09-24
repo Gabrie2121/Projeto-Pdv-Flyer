@@ -7,31 +7,31 @@ class Usuarios(Resource):
 
 class Usuario(Resource):
     atributos = reqparse.RequestParser()
-    atributos.add_argument('login')
+    atributos.add_argument('id')
     atributos.add_argument('senha')
     atributos.add_argument('nome_funcionario')
 
-    def get(self,id):
-        usuario = UsuarioModel.find_user(id)
+    def get(self,login):
+        usuario = UsuarioModel.find_user(login)
         if usuario:
             return usuario.json()
         return {'message':'User not found'},404
     
-    def post(self,id):
-        if UsuarioModel.find_user(id):
-            return {f'message':'User id {id} already exists.'},400
+    def post(self,login):
+        if UsuarioModel.find_user(login):
+            return {f'message':'User id {login} already exists.'},400
         dados = Usuario.atributos.parse_args()
-        user = UsuarioModel(id,**dados)
+        user = UsuarioModel(login,**dados)
         try:
             user.save_user()
         except:
             return {'message': 'An error ocurred trying to create user'},500
         return user.json(),201
-    def put(self,id):
+    def put(self,login):
         dados = Usuario.atributos.parse_args()
-        user = UsuarioModel(id, **dados)
+        user = UsuarioModel(login, **dados)
 
-        usuario_encontrado = UsuarioModel.find_produto(codigo)
+        usuario_encontrado = UsuarioModel.find_produto(login)
         if usuario_encontrado:
             usuario_encontrado.update_user(**dados)
             usuario_encontrado.save_user()
@@ -39,8 +39,8 @@ class Usuario(Resource):
         user.save_user()
         return user.json(), 201
 
-    def delete(self, id):
-        user = UsuarioModel.find_produto(id)
+    def delete(self, login):
+        user = UsuarioModel.find_user(login)
         if user:
             user.delete_user()
             return {'message': 'Usuario deletado.'}

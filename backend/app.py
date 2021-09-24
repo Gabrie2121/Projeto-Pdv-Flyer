@@ -1,3 +1,4 @@
+#from resources.usuario import FindUser
 from resources.usuario import Usuario, Usuarios
 from resources.vendas import Venda, Vendas
 from flask import Flask
@@ -23,7 +24,7 @@ api.add_resource(Comandas,'/comandas')
 api.add_resource(Venda, '/venda/<string:cod_venda>')
 api.add_resource(Vendas,'/vendas')
 
-api.add_resource(Usuario,'/usuario/<string:id>')
+api.add_resource(Usuario,'/usuario/<string:login>')
 api.add_resource(Usuarios,'/usuarios')
 
 

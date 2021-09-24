@@ -24,8 +24,8 @@ class UsuarioModel(banco.Model):
             'nome_funcionario':self.nome_funcionario
         }
     @classmethod
-    def find_user(cls,id):
-        user = cls.query.filter_by(id=id).first() #SELECT * FROM produtos WHERE produto = produto
+    def find_user(cls,login):
+        user = cls.query.filter_by(login=login).first() #SELECT * FROM produtos WHERE produto = produto
         if user:
             return user
         return None
