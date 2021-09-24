@@ -1,3 +1,4 @@
+from resources.usuario import Usuario, Usuarios
 from resources.vendas import Venda, Vendas
 from flask import Flask
 from flask_restful import Api
@@ -21,6 +22,9 @@ api.add_resource(Comandas,'/comandas')
 
 api.add_resource(Venda, '/venda/<string:cod_venda>')
 api.add_resource(Vendas,'/vendas')
+
+api.add_resource(Usuario,'/usuario/<string:id>')
+api.add_resource(Usuarios,'/usuarios')
 
 
 if __name__ == '__main__':
