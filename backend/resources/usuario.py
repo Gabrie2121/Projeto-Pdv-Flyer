@@ -20,6 +20,7 @@ class Usuario(Resource):
     def post(self,login):
         if UsuarioModel.find_user(login):
             return {f'message':'User id {login} already exists.'},400
+        print(login)
         dados = Usuario.atributos.parse_args()
         user = UsuarioModel(login,**dados)
         try:
@@ -27,6 +28,7 @@ class Usuario(Resource):
         except:
             return {'message': 'An error ocurred trying to create user'},500
         return user.json(),201
+        
     def put(self,login):
         dados = Usuario.atributos.parse_args()
         user = UsuarioModel(login, **dados)

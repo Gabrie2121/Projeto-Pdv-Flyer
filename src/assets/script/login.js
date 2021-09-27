@@ -7,6 +7,8 @@ const join = () => {
         .then(res => res.json())
         .then(data =>{
             if (user == data.login && password == data.senha) {
+                sessionStorage.setItem('nome_funcionario', data.nome_funcionario)
+                sessionStorage.setItem('id_funcionario', data.id)
                 window.location.href = "menu.html";
                 miss.innerHTML = ""
                 console.log(data)

@@ -3,15 +3,16 @@ from creatsqlalchemy import banco
 from datetime import datetime
 class ComandaModel(banco.Model):
     __tablename__ = "comandas"
-
-    codComanda = banco.Column(banco.String(), primary_key=True)
+    codComanda = banco.Column(banco.String())
+    id = banco.Column(banco.Integer(), primary_key=True)
     codprod = banco.Column(banco.Integer())
     qtde = banco.Column(banco.Float(precision=3))
     id_vendedor = banco.Column(banco.Integer())
     status = banco.Column(banco.Integer(),default = 0)
 
-    def __init__(self,codComanda,codprod,qtde,id_vendedor,status):
+    def __init__(self,codComanda,id,codprod,qtde,id_vendedor,status):
         self.codComanda = codComanda
+        self.id = id
         self.codprod = codprod
         self.qtde = qtde
         self.id_vendedor = id_vendedor
@@ -20,6 +21,7 @@ class ComandaModel(banco.Model):
     def json(self):
         return{
             'codComanda':self.codComanda,
+            'id':self.id,
             'codprod':self.codprod,
             'qtde':self.qtde,
             'id_vendedor':self.id_vendedor,
@@ -28,6 +30,12 @@ class ComandaModel(banco.Model):
 
     @classmethod
     def find_comanda(cls,codComanda):
+        findComanda = cls.query.filter_by(codComanda=codComanda).all()
+        if findComanda:
+            return findComanda
+        return None
+    @classmethod
+    def find_one_comanda(cls,codComanda):
         findComanda = cls.query.filter_by(codComanda=codComanda).first()
         if findComanda:
             return findComanda
