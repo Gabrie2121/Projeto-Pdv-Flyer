@@ -10,26 +10,32 @@ const puxarComanda = (codigo) => {
     fetch(`http://127.0.0.1:5000/pushComanda/${codigo}`)
         .then(res => res.json())
         .then(data => {
+            console.log(data)
             pushComanda(data, codigo)
         })
 
 }
 const pushComanda = (data, comanda) => {
-    spaceComanda.innerHTML = comanda
-    mensagem.value = "Venda em Andamento"
-    for (let i = 0; i < data.length; i++) {
-        fetch(`http://127.0.0.1:5000/produto/${data[i].codprod}`)
-            .then(res => res.json())
-            .then(value => {
-                cupom.innerHTML += `
+    if (data.length == 0) {
+        spaceComanda.innerHTML = "COMANDA NÃO ENCONTRADA"
+    }
+    else {
+        spaceComanda.innerHTML = comanda
+        mensagem.value = "Venda em Andamento"
+        for (let i = 0; i < data.length; i++) {
+            fetch(`http://127.0.0.1:5000/produto/${data[i].codprod}`)
+                .then(res => res.json())
+                .then(value => {
+                    cupom.innerHTML += `
                     <div class="itens list">
                         <div>${data[i].codprod}</div>
                         <div>${value.nome}</div>
                         <div>${data[i].qtde}</div>
                         <div>R$ ${value.valor}</div>
                     </div>`
-                valorTotal(value.valor, data[i].qtde)
-            })
+                    valorTotal(value.valor, data[i].qtde)
+                })
+        }
     }
 }
 const valorTotal = (valor, qtd) => {
@@ -62,7 +68,7 @@ codigoComanda.addEventListener('keypress', e => {
 desconto.addEventListener('keypress', e => {
     if (e.charCode == 13) {
         totalDesc = total
-        if (total <= totalDesc && valorCompleto.value>0) {
+        if (total <= totalDesc) {
             let valorDescontado = total - desconto.value
             valorCompleto.value = `R$${valorDescontado.toFixed(2)}`
             desconto.value = ''
