@@ -86,6 +86,9 @@ input[type=number] {
    appearance: textfield;
 
 }
+input{
+    color: black;
+}
 .dir{
    display: flex;
    flex-direction: column;
@@ -126,7 +129,7 @@ input[type=number] {
 .down input{
     height: 52px;
     font-size: 1.4rem;
-    text-align: end;
+    text-align: center;
 }
 .down b{
     color: white;

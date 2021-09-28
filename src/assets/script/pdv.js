@@ -25,7 +25,7 @@ const pushComanda = (data,comanda) => {
                         <div>${data[i].codprod}</div>
                         <div>${value.nome}</div>
                         <div>${data[i].qtde}</div>
-                        <div>${value.valor}</div>
+                        <div>R$ ${value.valor}</div>
                     </div>`
                 valorTotal(value.valor,data[i].qtde)
             })
