@@ -37,7 +37,12 @@ class Comanda(Resource):
             else:
                 return{'message':'Comanda Removida'},201 
         except:
-            return {'message':'Comanda não encontrada'},404
-            
-        
-        
+            return {'message':'Comanda não encontrada'},404      
+
+class pushComanda(Resource):
+    def get(self,codComanda):
+        comandas= [venda.json() for venda in ComandaModel.query.filter_by(codComanda=codComanda).all()]
+        try:
+            return comandas
+        except:
+            return {'message':'Comandas not Found'}
