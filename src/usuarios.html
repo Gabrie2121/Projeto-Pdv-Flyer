@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="./assets/usuarios.css">
+</head>
+<body>
+    <div class="container">
+        <div class="entrada">
+            <input id="usuario" type="text" placeholder="Insira o Login do Usuario" required>
+            <input id="senha" type="password" placeholder="Insira a Senha">
+            <input id="nome" type="Nome" step=0.01 placeholder="Insira o Nome do Usuario">
+            <button class="inserir" onclick="inserir()">Inserir</button>
+            <button class="pesquisar" onclick="puxar()">Pesquisar</button>
+            <button class="sair" onclick="sair()">Sair</button>
+        </div>
+        <div class="list_users">
+            <div id="lista" class="list">
+                <div class="list_cab">
+                    <div>Usuario</div>
+                    <div>Nome</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script/usuarios.js"></script>
+</body>
+
+</html>

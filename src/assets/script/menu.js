@@ -13,8 +13,8 @@ const clientes = () => {
 const vendas = () => {
     window.location.href = "vendas.html";
 }
-const movimentacao = () => {
-    window.location.href = "mov.html";
+const usuarios = () => {
+    window.location.href = "usuarios.html";
 }
 const sair = () => {
     window.location.href = "login.html";
