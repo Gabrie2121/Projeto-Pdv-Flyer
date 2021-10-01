@@ -7,20 +7,24 @@ let desconto = document.getElementById('desconto')
 const v = []
 let total = 0
 const puxarComanda = (codigo) => {
-    fetch(`http://127.0.0.1:5000/pushComanda/${codigo}`)
+    try{
+        fetch(`http://127.0.0.1:5000/pushComanda/${codigo}`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
             pushComanda(data, codigo)
         })
-
+    }
+    catch(e){
+        alert('Impossivel Conectar ao Backend')
+    }
 }
 const pushComanda = (data, comanda) => {
     if (data.length == 0) {
         spaceComanda.innerHTML = "COMANDA NÃO ENCONTRADA"
     }
     else {
-        spaceComanda.innerHTML = comanda
+        spaceComanda.innerHTML = `00000${comanda}`
         mensagem.value = "Venda em Andamento"
         for (let i = 0; i < data.length; i++) {
             fetch(`http://127.0.0.1:5000/produto/${data[i].codprod}`)
@@ -31,7 +35,7 @@ const pushComanda = (data, comanda) => {
                         <div>${data[i].codprod}</div>
                         <div>${value.nome}</div>
                         <div>${data[i].qtde}</div>
-                        <div>R$ ${value.valor}</div>
+                        <div>R$ ${value.valor.toFixed(2)}</div>
                     </div>`
                     valorTotal(value.valor, data[i].qtde)
                 })

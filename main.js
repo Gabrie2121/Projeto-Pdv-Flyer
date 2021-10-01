@@ -3,7 +3,6 @@ const { exec } = require('child_process');
 const path = require('path')
 var execfile = require('child_process').execFile;
 
-
 function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
