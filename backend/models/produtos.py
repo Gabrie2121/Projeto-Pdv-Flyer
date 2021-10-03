@@ -19,6 +19,7 @@ class ProdutosModel(banco.Model):
             'nome':self.nome,
             'valor':self.valor
         }
+        
     @classmethod
     def find_produto(cls,codigo):
         produto = cls.query.filter_by(codigo=codigo).first() #SELECT * FROM produtos WHERE produto = produto

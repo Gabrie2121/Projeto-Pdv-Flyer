@@ -9,7 +9,7 @@ const inserir = async () => {
 }
 const inserirUsers = (codigo, body) => {
     try {
-        fetch(`http://127.0.0.1:5000/usuario/${codigo}`, {
+        fetch(`http://31.220.21.132:5000/usuario/${codigo}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,7 +21,7 @@ const inserirUsers = (codigo, body) => {
     }
 }
 const puxar = () => {
-    fetch('http://127.0.0.1:5000/usuarios')
+    fetch('http://31.220.21.132:5000/usuarios')
         .then(res => res.json())
         .then(data => {
             try {

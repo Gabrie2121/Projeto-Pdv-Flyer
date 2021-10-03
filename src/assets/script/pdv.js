@@ -4,18 +4,21 @@ let cupom = document.getElementById('cupom')
 let mensagem = document.getElementById('mensagem')
 let valorCompleto = document.getElementById('valorCompleto')
 let desconto = document.getElementById('desconto')
+let vender = document.getElementById('vender')
+let esq = document.getElementById('esq')
 const v = []
 let total = 0
+
 const puxarComanda = (codigo) => {
-    try{
-        fetch(`http://127.0.0.1:5000/pushComanda/${codigo}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            pushComanda(data, codigo)
-        })
+    try {
+        fetch(`http://31.220.21.132:5000/pushComanda/${codigo}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                pushComanda(data, codigo)
+            })
     }
-    catch(e){
+    catch (e) {
         alert('Impossivel Conectar ao Backend')
     }
 }
@@ -27,7 +30,7 @@ const pushComanda = (data, comanda) => {
         spaceComanda.innerHTML = `00000${comanda}`
         mensagem.value = "Venda em Andamento"
         for (let i = 0; i < data.length; i++) {
-            fetch(`http://127.0.0.1:5000/produto/${data[i].codprod}`)
+            fetch(`http://31.220.21.132:5000/produto/${data[i].codprod}`)
                 .then(res => res.json())
                 .then(value => {
                     cupom.innerHTML += `
@@ -38,14 +41,17 @@ const pushComanda = (data, comanda) => {
                         <div>R$ ${value.valor.toFixed(2)}</div>
                     </div>`
                     valorTotal(value.valor, data[i].qtde)
+                    
                 })
         }
+        
     }
+    
 }
 const valorTotal = (valor, qtd) => {
     let requi = valor * qtd
     total = total + requi
-    valorCompleto.value = `R$${total.toFixed(2)}`
+    valorCompleto.value = `R$ ${total.toFixed(2)}`
 }
 document.addEventListener('keypress', e => {
     if (e.charCode == 100) {
@@ -77,5 +83,20 @@ desconto.addEventListener('keypress', e => {
             valorCompleto.value = `R$${valorDescontado.toFixed(2)}`
             desconto.value = ''
         }
+    }
+})
+const venda = () => {
+    sessionStorage.setItem('vTotal',total.toFixed(2))
+}
+
+vender.addEventListener('click', e => {
+    venda()
+    window.location.href = "pagamento.html";
+})
+
+document.addEventListener('keypress',e=>{
+    if(e.charCode==86){
+        venda()
+        window.location.href = "pagamento.html";
     }
 })

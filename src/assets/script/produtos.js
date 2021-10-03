@@ -9,7 +9,7 @@ const inserir = async () => {
 }
 const inserirProdutos = (codigo, body) => {
     try {
-        fetch(`http://127.0.0.1:5000/produto/${codigo}`, {
+        fetch(`http://31.220.21.132:5000/produto/${codigo}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ const puxar = async () => {
 }
 
 const puxarProdutos = (codigo) => {
-    fetch(`http://127.0.0.1:5000/${codigo}`)
+    fetch(`http://31.220.21.132:5000/${codigo}`)
         .then(res => res.json())
         .then(data => {
             try {
