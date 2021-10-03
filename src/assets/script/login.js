@@ -3,7 +3,7 @@ const join = () => {
     var miss = document.getElementById('miss')
     var user = document.getElementById('user').value
     var password = document.getElementById('password').value
-    fetch(`http://31.220.21.132:5000/usuario/${user}`)
+    fetch(`http://192.168.15.10:5000/usuario/${user}`)
         .then(res => res.json())
         .then(data =>{
             if (user == data.login && password == data.senha) {

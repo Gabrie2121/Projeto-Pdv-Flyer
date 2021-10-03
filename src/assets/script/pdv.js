@@ -11,7 +11,7 @@ let total = 0
 
 const puxarComanda = (codigo) => {
     try {
-        fetch(`http://31.220.21.132:5000/pushComanda/${codigo}`)
+        fetch(`http://192.168.15.10:5000/pushComanda/${codigo}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -30,7 +30,7 @@ const pushComanda = (data, comanda) => {
         spaceComanda.innerHTML = `00000${comanda}`
         mensagem.value = "Venda em Andamento"
         for (let i = 0; i < data.length; i++) {
-            fetch(`http://31.220.21.132:5000/produto/${data[i].codprod}`)
+            fetch(`http://192.168.15.10:5000/produto/${data[i].codprod}`)
                 .then(res => res.json())
                 .then(value => {
                     cupom.innerHTML += `
