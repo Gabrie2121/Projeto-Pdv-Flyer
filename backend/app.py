@@ -33,4 +33,4 @@ api.add_resource(Usuarios,'/usuarios')
 if __name__ == '__main__':
     from creatsqlalchemy import banco
     banco.init_app(app)
-    app.run(debug=True,host='0.0.0.0')
+    app.run(host='0.0.0.0')
