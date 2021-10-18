@@ -25,13 +25,59 @@ body {
   width: 1100px;
   color: white;
 }
+
 .valores {
   display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  grid-template-areas:
+    "data data values"
+    "data data values";
 
   margin-top: 10px;
   background-color: white;
   height: 400px;
 }
+
+.table_values {
+  padding: 30px;
+  width: 300px;
+}
+
+.table_values tr td {
+  font-size: 25px;
+}
+
+.table_values tr th {
+  padding-bottom: 20px;
+}
+
+.color_on {
+  background-color: azure;
+}
+
+.color_off {
+  background-color: beige;
+}
+
+.pagamentoCss {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.valor_final {
+  padding-top: 50px;
+}
+
+.data {
+  grid-area: data;
+}
+
+.values {
+  grid-area: values;
+}
+
 .formasDePagamento {
   justify-content: space-between;
   display: flex;

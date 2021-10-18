@@ -1,32 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pagamento</title>
-    <link rel="stylesheet" href="./assets/pagamento.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/pagamento.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="title">
-            <h1>Finalizar Venda</h1>
+      <div class="title">
+        <h1>Finalizar Venda</h1>
+      </div>
+      <div class="valores">
+        <div class="data" id="data">Informe a forma de pagamento...</div>
+        <div class="values">
+          <table class="table_values">
+            <tr>
+              <th>Confirmação de Pagamento</th>
+            </tr>
+            <tr>
+              <td class="color_on" id="vendedor">Vendedor:</td>
+            </tr>
+            <tr>
+              <td class="color_off" id="comanda">Comanda:</td>
+            </tr>
+            <tr>
+              <td class="color_on" id="desconto">Desconto:</td>
+            </tr>
+            <tr>
+              <td class="color_off" id="subtotal">Subtotal:</td>
+            </tr>
+            <tr>
+              <td class="color_on">Valor Pago:</td>
+            </tr>
+            <tr>
+              <td>&#160;</td>
+            </tr>
+            <tr class="valor_final">
+              <td class="color_on">Troco:</td>
+            </tr>
+          </table>
         </div>
-        <div class="valores">
-
-        </div>
-        <div class="formasDePagamento">
-            <button class="dinheiro">Dinheiro</button>
-            <button class="debito">Débito</button>
-            <button class="credito">Crédito</button>
-            <button class="pix">Pix</button>
-            <button class="carteira">Carteira</button>
-        </div>
-        <div class="finalizar">
-            <button onclick="voltar()">Voltar</button>
-            <button>Confirmar</button>
-        </div>
+      </div>
+      <div class="formasDePagamento">
+        <button class="dinheiro" onclick="clickOn_dinheiro()">Dinheiro</button>
+        <button class="debito">Débito</button>
+        <button class="credito">Crédito</button>
+        <button class="pix">Pix</button>
+        <button class="carteira">Carteira</button>
+      </div>
+      <div class="finalizar">
+        <button onclick="voltar()">Voltar</button>
+        <button>Confirmar</button>
+      </div>
     </div>
     <script src="./assets/script/pagamento.js"></script>
-</body>
+  </body>
 </html>

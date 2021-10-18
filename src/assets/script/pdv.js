@@ -72,12 +72,9 @@ document.addEventListener("keypress", (e) => {
 codigoComanda.addEventListener("keypress", (e) => {
   if (e.charCode == 13) {
     puxarComanda(codigoComanda.value);
+    eventSessionStorage("codcomanda", codigoComanda.value);
     codigoComanda.value = "";
   }
-});
-
-codigoComanda.addEventListener("keyup", (e) => {
-  eventSessionStorage("codcomanda", desconto.value);
 });
 
 desconto.addEventListener("keyup", (e) => {
