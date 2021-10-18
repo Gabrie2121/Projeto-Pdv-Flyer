@@ -12,6 +12,7 @@ class Venda(Resource):
     atributos.add_argument('vlvenda')
     atributos.add_argument('valor_total')
     atributos.add_argument('id_vendedor')
+    atributos.add_argument('pagamentos')
     atributos.add_argument('status')
 
     def get(self,cod_venda):

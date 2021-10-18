@@ -1,78 +1,79 @@
-body{
-    background-color: #1B2A41;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  background-color: #1b2a41;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-.container{
-    width: 1100px;
-    height: 650px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-rows: .5fr 1.5fr 1fr .5fr;
-    
+.container {
+  width: 1100px;
+  height: 650px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 0.5fr 1.5fr 1fr 0.5fr;
 }
-.title{
-    display: flex;
-    justify-content: center ;
-    height: 30px;
-    width: 1100px;
-    color: white;
+.title {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+  width: 1100px;
+  color: white;
 }
-.valores{
-    margin-top: 10px;
-    background-color: white;
-    height: 400px;
+.valores {
+  display: grid;
+
+  margin-top: 10px;
+  background-color: white;
+  height: 400px;
 }
-.formasDePagamento{
-    justify-content: space-between;
-    display: flex;
+.formasDePagamento {
+  justify-content: space-between;
+  display: flex;
 }
-.formasDePagamento button{
-    border-radius: 10px;
-    width: 200px;
-    height: 100px;
-    font-size: 25px;
+.formasDePagamento button {
+  border-radius: 10px;
+  width: 200px;
+  height: 100px;
+  font-size: 25px;
 }
-.dinheiro{
-    background-color: #096309;
-    color: white;
+.dinheiro {
+  background-color: #096309;
+  color: white;
 }
-.debito{
-    background-color: rgb(64, 64, 218);
-    color: white;
+.debito {
+  background-color: rgb(64, 64, 218);
+  color: white;
 }
-.credito{
-    background-color: rgb(255, 174, 0);
-    color: white;
+.credito {
+  background-color: rgb(255, 174, 0);
+  color: white;
 }
-.pix{
-    background-color: rgb(156, 23, 156);
-    color: white;
+.pix {
+  background-color: rgb(156, 23, 156);
+  color: white;
 }
-.carteira{
-    background-color: rgb(20, 19, 19);
-    color: white;
+.carteira {
+  background-color: rgb(20, 19, 19);
+  color: white;
 }
-.finalizar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.finalizar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.finalizar button{
-    padding: 8px 35px;
-    color: white;
+.finalizar button {
+  padding: 8px 35px;
+  color: white;
 }
-.finalizar button:first-child{
-    background-color: #b62222;
+.finalizar button:first-child {
+  background-color: #b62222;
 }
-.finalizar button:last-child{
-    background-color: #4222b6;
+.finalizar button:last-child {
+  background-color: #4222b6;
 }
