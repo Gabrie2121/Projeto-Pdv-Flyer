@@ -22,7 +22,7 @@ body{
     display: grid;
     justify-content: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr 1fr .5fr .5fr .5fr;
+    grid-template-columns: repeat(3,1fr) repeat(3,.5fr);
 }
 .entrada input{
     color: black;
@@ -57,7 +57,7 @@ body{
 }
 .list_cab,.list_prods {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,1fr) .5fr;
     height: 30px;
 }
 .list_cab{
@@ -72,4 +72,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.apagar{
+    background-color:#633232;
+    color: rgb(238, 238, 238);
+    border: none;
+    padding: 5px;
 }
