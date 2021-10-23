@@ -13,9 +13,10 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js')
-    }
+    },
+    icon: __dirname + "/icon.png"
   })
-  //win.setMenu(null)
+  win.setMenu(null)
 
   win.loadFile('./src/login.html')
 }

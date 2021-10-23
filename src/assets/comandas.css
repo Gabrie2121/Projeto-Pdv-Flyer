@@ -45,17 +45,16 @@ body{
 .sair{
     background-color: rgb(173, 54, 54);
 }
-.list_produtos{
+.list_comandas{
     margin-top: 10px;
     width: 1100px;
     height: 550px;
     border: 1px solid black;
     overflow: auto;
 }
-
 .list_cab,.list_prods {
     display: grid;
-    grid-template-columns: repeat(3,1fr) .5fr;
+    grid-template-columns: repeat(3,1fr);
     height: 30px;
 }
 .list_cab{

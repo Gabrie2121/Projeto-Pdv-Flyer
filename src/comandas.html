@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandas</title>
+    <link rel="stylesheet" href="assets/comandas.css">
+</head>
+<body>
+    <div class="container">
+        <div class="entrada">
+            <input id="codigo" type="text" placeholder="Insira o Codigo da Comanda" required>
+            <input id="nome" type="text" placeholder="Insira o ID do Vendedor" >
+            <div></div>
+            <div></div>
+            <button class="pesquisar" onclick="puxar()">Pesquisar</button>
+            <button class="sair" onclick="sair()">Sair</button>
+        </div>
+        <div class="list_comandas">
+            <div id="lista" class="list">
+                <div class="list_cab">
+                    <div>CÓDIGO COMANDA</div>
+                    <div>VENDEDOR</div>
+                    <div>STATUS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/script/comandas.js"></script>
+</body>
+</html>

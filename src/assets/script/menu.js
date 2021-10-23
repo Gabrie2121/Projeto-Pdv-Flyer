@@ -1,8 +1,8 @@
 const pdv = () => {
     window.location.href = "pdv.html";
 }
-const empresa = () => {
-    window.location.href = "empresa.html";
+const comandas = () => {
+    window.location.href = "comandas.html";
 }
 const produtos = () => {
     window.location.href = "produtos.html";
