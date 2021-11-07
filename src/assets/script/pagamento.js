@@ -55,6 +55,7 @@ const venda = (valor) => {
     "pagamento": valor,
     "status": 1
   }
+  sessionStorage.setItem("formaPgto",valor)
   try {
     fetch(`http://31.220.21.132:5000/comanda/${parseInt(jsonsession.codcomanda)}`, {
       method: 'DELETE',
@@ -68,6 +69,7 @@ const venda = (valor) => {
       },
       body: JSON.stringify(body)
     })
+    window.location.href = "finalizada.html";
   } catch (e) {
     fetch(`http://31.220.21.132:5000/comanda/${parseInt(jsonsession.codcomanda)}`, {
       method: 'DELETE',
@@ -81,5 +83,6 @@ const venda = (valor) => {
       },
       body: JSON.stringify(body)
     })
+    window.location.href = "finalizada.html";
   }
 }
