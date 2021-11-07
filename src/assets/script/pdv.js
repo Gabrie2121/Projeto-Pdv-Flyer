@@ -107,4 +107,57 @@ document.addEventListener("keypress", (e) => {
     venda();
     window.location.href = "pagamento.html";
   }
+  if (e.charCode == 112) {
+    const qtdeUnit = document.getElementById("qtdeUnit");
+    const valorUnit = document.getElementById("valorUnit");
+    if (qtdeUnit.value == "") {
+      liberarUnitario(qtdeUnit);
+    } else {
+      adicionarUnitario();
+    }
+  }
 });
+const liberarUnitario = (qtdeUnit) => {
+  qtdeUnit.removeAttribute("disabled");
+};
+const adicionarUnitario = () => {
+  const qtdeUnit = document.getElementById("qtdeUnit");
+  const valorUnit = document.getElementById("valorUnit");
+  const codigo = document.getElementById("codigo");
+  const codComanda = sessionStorage.getItem("codcomanda");
+  const vendedor = sessionStorage.getItem("id_funcionario");
+  const body = {
+    codComanda: codComanda,
+    id: null,
+    codprod: codigo.value,
+    qtde: qtdeUnit.value,
+    id_vendedor: vendedor,
+    status: 0,
+  };
+  try {
+    fetch(`http://31.220.21.132:5000/comanda/${codComanda}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
+  } catch (e) {
+    console.log(e);
+  }
+  codigo.value = ""
+  qtdeUnit.value = ""
+  qtdeUnit.setAttribute('disabled', 'disabled')
+  total = 0;
+    valorTotal(0, 0);
+  cupom.innerHTML = `<div id="cupom" class="cab">** Cupom Fiscal **</div>
+        --------------------------------------------------------------------------
+        <div class="list cab">
+            <div>CÓDIGO</div>
+            <div>DESCRIÇÃO</div>
+            <div>QTD</div>
+            <div>VALOR</div>
+        </div>
+        --------------------------------------------------------------------------`;
+  puxarComanda(codComanda)
+};

@@ -1,4 +1,5 @@
 entrar = document.getElementById('entrar')
+senha = document.getElementById('password')
 const join = () => {
     var miss = document.getElementById('miss')
     var user = document.getElementById('user').value
@@ -30,3 +31,8 @@ const join = () => {
         
 }
 entrar.addEventListener('click', join)
+senha.addEventListener('keypress',e=>{
+    if (e.charCode == 13) {
+        join()
+    }
+})

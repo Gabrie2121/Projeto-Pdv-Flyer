@@ -16,7 +16,7 @@ function createWindow() {
     },
     icon: __dirname + "/icon.png"
   })
-  win.setMenu(null)
+  //win.setMenu(null)
 
   win.loadFile('./src/login.html')
 }
