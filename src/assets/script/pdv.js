@@ -17,6 +17,7 @@ const puxarComanda = (codigo) => {
         console.log(data);
         pushComanda(data, codigo);
       });
+      vender.removeAttribute("disabled");
   } catch (e) {
     alert("Impossivel Conectar ao Backend");
   }
