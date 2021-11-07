@@ -19,7 +19,7 @@ class VendasModel(banco.Model):
         self.vlvenda = vlvenda
         self.valor_total = valor_total
         self.id_vendedor = id_vendedor
-        self.pagamentos = pagamento
+        self.pagamento = pagamento
         self.status = status
     
     def json(self):

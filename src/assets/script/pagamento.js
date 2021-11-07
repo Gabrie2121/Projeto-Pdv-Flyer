@@ -52,7 +52,7 @@ const venda = (valor) => {
     "vlvenda": parseFloat(jsonsession.vTotal).toFixed(2),
     "valor_total": (parseFloat(jsonsession.vTotal).toFixed(2) - parseFloat(jsonsession.desconto).toFixed(2)).toFixed(2),
     "id_vendedor": sessionStorage.getItem("id_terminal_vendedor"),
-    "pagamentos": valor,
+    "pagamento": valor,
     "status": 1
   }
   try {
