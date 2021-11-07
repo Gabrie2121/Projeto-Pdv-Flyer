@@ -17,6 +17,7 @@ const puxarComanda = (codigo) => {
         console.log(data);
         pushComanda(data, codigo);
       });
+    vender.removeAttribute("disabled");
   } catch (e) {
     alert("Impossivel Conectar ao Backend");
   }
@@ -27,6 +28,7 @@ const pushComanda = (data, comanda) => {
   } else {
     spaceComanda.innerHTML = `00000${comanda}`;
     mensagem.value = "Venda em Andamento";
+    eventSessionStorage("id_terminal_vendedor",data[0].id_vendedor)
     for (let i = 0; i < data.length; i++) {
       try {
         fetch(`http://31.220.21.132:5000/produto/${data[i].codprod}`)
@@ -77,15 +79,14 @@ codigoComanda.addEventListener("keypress", (e) => {
   }
 });
 
-desconto.addEventListener("keyup", (e) => {
-  eventSessionStorage("desconto", desconto.value);
-});
 
 desconto.addEventListener("keypress", (e) => {
   if (e.charCode == 13) {
+    let desconto = document.getElementById('desconto')
     totalDesc = total;
     if (total <= totalDesc) {
-      eventSessionStorage("desconto", desconto.value);
+      sessionStorage.setItem("desconto", desconto.value);
+      console.log(desconto.value)
       let valorDescontado = total - desconto.value;
       valorCompleto.value = `R$${valorDescontado.toFixed(2)}`;
       desconto.value = "";
@@ -103,11 +104,11 @@ vender.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keypress", (e) => {
-  if (e.charCode == 86) {
-    venda();
+  console.log(e.charCode)
+  if (e.charCode == 86 || e.charCode == 118) {
     window.location.href = "pagamento.html";
   }
-  if (e.charCode == 112) {
+  if (e.charCode == 112 || e.charCode == 80) {
     const qtdeUnit = document.getElementById("qtdeUnit");
     const valorUnit = document.getElementById("valorUnit");
     if (qtdeUnit.value == "") {
@@ -149,7 +150,7 @@ const adicionarUnitario = () => {
   qtdeUnit.value = ""
   qtdeUnit.setAttribute('disabled', 'disabled')
   total = 0;
-    valorTotal(0, 0);
+  valorTotal(0, 0);
   cupom.innerHTML = `<div id="cupom" class="cab">** Cupom Fiscal **</div>
         --------------------------------------------------------------------------
         <div class="list cab">
