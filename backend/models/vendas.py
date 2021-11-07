@@ -12,14 +12,14 @@ class VendasModel(banco.Model):
     pagamento = banco.Column(banco.String())
     status = banco.Column(banco.Integer())
 
-    def __init__(self, cod_venda,codcomanda,desconto,vlvenda,valor_total,id_vendedor,pagamentos,status):
+    def __init__(self, cod_venda,codcomanda,desconto,vlvenda,valor_total,id_vendedor,pagamento,status):
         self.cod_venda = cod_venda
         self.codcomanda = codcomanda
         self.desconto = desconto
         self.vlvenda = vlvenda
         self.valor_total = valor_total
         self.id_vendedor = id_vendedor
-        self.pagamentos = pagamentos
+        self.pagamentos = pagamento
         self.status = status
     
     def json(self):
@@ -30,7 +30,7 @@ class VendasModel(banco.Model):
             'vlvenda':self.vlvenda,
             'valor_total':self.valor_total,
             'id_vendedor':self.id_vendedor,
-            'pagamentos':self.pagamentos,
+            'pagamento':self.pagamento,
             'status':self.status
         }
     @classmethod
