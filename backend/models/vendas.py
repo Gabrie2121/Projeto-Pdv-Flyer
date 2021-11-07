@@ -9,7 +9,7 @@ class VendasModel(banco.Model):
     vlvenda = banco.Column(banco.Float(precision=2))
     valor_total = banco.Column(banco.Float(precision=2))
     id_vendedor = banco.Column(banco.Integer())
-    pagamentos = banco.Column(banco.String())
+    pagamento = banco.Column(banco.String())
     status = banco.Column(banco.Integer())
 
     def __init__(self, cod_venda,codcomanda,desconto,vlvenda,valor_total,id_vendedor,pagamentos,status):
