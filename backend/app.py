@@ -23,7 +23,7 @@ api.add_resource(Comanda, '/comanda/<string:codComanda>')
 api.add_resource(Comandas,'/comandas')
 api.add_resource(pushComanda,'/pushComanda/<string:codComanda>')
 
-api.add_resource(Venda, '/venda/<string:cod_venda>')
+api.add_resource(Venda, '/venda')
 api.add_resource(Vendas,'/vendas')
 
 api.add_resource(Usuario,'/usuario/<string:login>')

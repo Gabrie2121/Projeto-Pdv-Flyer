@@ -21,12 +21,9 @@ class Venda(Resource):
             return venda.json()
         return {'message':'venda not found'},404
 
-    def post(self,cod_venda):
-        if VendasModel.find_venda(cod_venda):
-            return {'message': 'venda id "{}" already exists.'.format(cod_venda)},400
-            
+    def post(self): 
         dados = Venda.atributos.parse_args()
-        venda = VendasModel(cod_venda, **dados)
+        venda = VendasModel(None,**dados)
         try:
             venda.save_venda()
         except:

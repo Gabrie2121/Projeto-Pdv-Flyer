@@ -62,7 +62,7 @@ const venda = (valor) => {
     })
       .then(res => res.text()) // or res.json()
       .then(res => console.log(res))
-    fetch(`http://31.220.21.132:5000/venda/${Math.floor(Math.random() * (1000000 * 1) + 1)}`, {
+    fetch(`http://31.220.21.132:5000/venda`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -71,18 +71,6 @@ const venda = (valor) => {
     })
     window.location.href = "finalizada.html";
   } catch (e) {
-    fetch(`http://31.220.21.132:5000/comanda/${parseInt(jsonsession.codcomanda)}`, {
-      method: 'DELETE',
-    })
-      .then(res => res.text()) // or res.json()
-      .then(res => console.log(res))
-    fetch(`http://31.220.21.132:5000/venda/${Math.floor(Math.random() * (1000000 * 1) + 1)}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    })
-    window.location.href = "finalizada.html";
+    console.log(e);
   }
 }
