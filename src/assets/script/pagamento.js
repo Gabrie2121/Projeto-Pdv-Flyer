@@ -69,7 +69,6 @@ const venda = (valor) => {
       },
       body: JSON.stringify(body)
     })
-    window.location.href = "finalizada.html";
   } catch (e) {
     console.log(e);
   }
