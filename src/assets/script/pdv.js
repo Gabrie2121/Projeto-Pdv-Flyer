@@ -104,7 +104,7 @@ vender.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keypress", (e) => {
-  console.log(e.charCode)
+  eventSessionStorage("vTotal", total.toFixed(2));
   if (e.charCode == 86 || e.charCode == 118) {
     window.location.href = "pagamento.html";
   }
