@@ -3,3 +3,4 @@ backend/build
 backend/build
 backend/dist
 backend/__pycache__
+/venv/
